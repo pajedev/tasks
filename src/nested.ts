@@ -135,7 +135,10 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * each question is now published, regardless of its previous published status.
  */
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    let published = questions.map(
+        (question: Question): Question => ({ ...question, published: true }),
+    );
+    return published;
 }
 
 /***
@@ -143,7 +146,15 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
-    return false;
+    let multChoice = questions.every(
+        (question: Question): boolean =>
+            question.type === "multiple_choice_question",
+    );
+    let shortAnsw = questions.every(
+        (question: Question): boolean =>
+            question.type === "short_answer_question",
+    );
+    return multChoice || shortAnsw;
 }
 
 /***
