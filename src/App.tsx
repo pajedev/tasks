@@ -2,6 +2,12 @@ import React from "react";
 import "./App.css";
 import snoopy from "./images/comp_sci_snoopy.jpg";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 function App(): React.JSX.Element {
     return (
@@ -11,62 +17,18 @@ function App(): React.JSX.Element {
                 <br />
                 Author: Patricia Devine
             </header>
-            <h2>Another header! Just for fun.</h2>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-                <br />
-                Hello World!
-            </p>
-            <p>
-                New paragraph, so exciting!
-                <br />
-                <Container>
-                    <Row>
-                        <Col>
-                            Red Rectangle 1:
-                            <br />
-                            <div
-                                style={{
-                                    width: "400px",
-                                    height: "100px",
-                                    backgroundColor: "red",
-                                }}
-                            ></div>
-                            <ol>
-                                <li>Task 1: done!</li>
-                                <li>Task 2: done!</li>
-                                <li>Task 3: working...</li>
-                                <li>Task 4+: yet to start</li>
-                            </ol>
-                        </Col>
-                        <Col>
-                            Red Rectangle 2:
-                            <br />
-                            <div
-                                style={{
-                                    width: "400px",
-                                    height: "100px",
-                                    backgroundColor: "red",
-                                }}
-                            ></div>
-                            This is me working on these tasks:
-                            <br />
-                            <img
-                                src={snoopy}
-                                alt="A picture of snoopy typing on his computer"
-                            />
-                        </Col>
-                    </Row>
-                </Container>
-            </p>
-            <Button
-                onClick={() => {
-                    console.log("Hello World!");
-                }}
-            >
-                Log Hello World
-            </Button>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
