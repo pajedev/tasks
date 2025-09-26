@@ -26,8 +26,10 @@ export function TwoDice(): React.JSX.Element {
         <div>
             <Button onClick={rollLeft}>Roll Left</Button>
             Left Die Value: <span data-testid="left-die">{leftDie}</span>
+            <br />
             <Button onClick={rollRight}>Roll Right</Button>
             Right Die Value: <span data-testid="right-die">{rightDie}</span>
+            <br />
             <div>
                 {leftDie === rightDie && leftDie === 1 ?
                     <span>SNAKE EYES! You Lose!</span>
