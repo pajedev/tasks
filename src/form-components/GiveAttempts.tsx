@@ -4,7 +4,7 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 export function GiveAttempts(): React.JSX.Element {
     //state
     const [attempts, setAttempts] = useState<number>(3);
-    const [requested, setRequested] = useState<string>("3");
+    const [requested, setRequested] = useState<string>("");
     //control
     function updateRequested(event: React.ChangeEvent<HTMLInputElement>) {
         setRequested(event.target.value);
@@ -14,7 +14,7 @@ export function GiveAttempts(): React.JSX.Element {
     }
     function gainAttempt() {
         parseInt(requested) ?
-            setAttempts(parseInt(requested))
+            setAttempts(parseInt(requested) + attempts)
         :   setAttempts(attempts);
     }
     //view
