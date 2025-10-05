@@ -29,9 +29,9 @@ export function MultipleChoiceQuestion({
                     c. Robert E. Lee
                 </Form.Label>
                 <Form.Select value={choice} onChange={updateChoice}>
-                    <option value="a">a</option>
-                    <option value="b">b</option>
-                    <option value="c">c</option>
+                    <option value={options[0]}>options[0]</option>
+                    <option value={options[1]}>options[1]</option>
+                    <option value={options[2]}>options[2]</option>
                 </Form.Select>
             </Form.Group>
             Your answer is
